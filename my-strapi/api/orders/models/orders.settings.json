@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_time": {
+      "type": "datetime"
+    },
+    "customer": {
+      "via": "orders",
+      "model": "customers"
+    },
+    "comment": {
+      "type": "richtext"
+    },
+    "menu": {
+      "via": "orders",
+      "model": "menus"
+    },
+    "restaurant": {
+      "via": "orders",
+      "model": "restaurants"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "image_url": {
+      "type": "text"
+    }
+  }
+}

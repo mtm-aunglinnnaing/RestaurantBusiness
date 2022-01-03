@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "menus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "pirce": {
+      "type": "decimal"
+    },
+    "category": {
+      "model": "category",
+      "via": "menus"
+    },
+    "restaurants": {
+      "via": "menu",
+      "collection": "restaurants"
+    },
+    "orders": {
+      "via": "menu",
+      "collection": "orders"
+    },
+    "attached_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "order_key": {
+      "type": "integer",
+      "default": 0
+    },
+    "reference_url": {
+      "type": "text",
+      "regex": "^https?:\\/\\/(www\\.)?.+\\..+(\\/.+)?$"
+    }
+  }
+}

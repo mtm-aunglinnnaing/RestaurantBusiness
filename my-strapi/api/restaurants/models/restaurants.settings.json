@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "restaurants",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "menu": {
+      "via": "restaurants",
+      "model": "menus"
+    },
+    "orders": {
+      "via": "restaurant",
+      "collection": "orders"
+    }
+  }
+}
